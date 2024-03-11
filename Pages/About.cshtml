@@ -1,0 +1,28 @@
+@page
+@model ContosoUniversity.Pages.AboutModel
+
+@{
+    ViewData["Title"] = "Estatísticas dos alunos";
+}
+
+<h2>Estatísticas dos alunos</h2>
+
+<table>
+    <tr>
+        <th>Data de matrícula</th>
+        <th>Alunos</th>
+    </tr>
+
+    @foreach (var item in Model.Students)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+
+</table>
